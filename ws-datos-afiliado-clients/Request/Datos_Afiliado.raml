@@ -1,0 +1,15 @@
+#%RAML 1.0 NamedExample
+type: object
+properties:
+   client:
+        type: object
+        properties:
+          names: string
+          surnames: string
+          sex: string
+          age: integer
+          depEconomical: string
+          entityHealth: string
+          documentType:
+            enum: [CC,TI,RC,CE]
+          idNumber: integer

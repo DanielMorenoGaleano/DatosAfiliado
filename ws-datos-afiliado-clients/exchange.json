@@ -1,0 +1,13 @@
+{
+  "main": "Datos_Afiliado_API.raml",
+  "name": "Datos_Afiliado",
+  "groupId": "b3eed33d-d22d-42a3-93b1-0814c072464f",
+  "assetId": "datos_afiliado",
+  "version": "1.0.4",
+  "classifier": "raml",
+  "tags": [],
+  "descriptorVersion": "1.0.0",
+  "organizationId": "b3eed33d-d22d-42a3-93b1-0814c072464f",
+  "apiVersion": "v1",
+  "originalFormatVersion": "1.0"
+}

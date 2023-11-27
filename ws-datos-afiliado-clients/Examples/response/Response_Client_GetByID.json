@@ -1,0 +1,15 @@
+{
+     "client":  
+      {
+              "id": 1,
+              "names": "Julio",
+              "surnames": "Torres",
+              "sex" :"Masculino",
+              "age": 24,
+              "depEconomical": "Arquitecto",
+              "entityHealth": "Sanitas",
+              "documentType":"CC",
+              "idNumber": 102356653
+      }
+
+}

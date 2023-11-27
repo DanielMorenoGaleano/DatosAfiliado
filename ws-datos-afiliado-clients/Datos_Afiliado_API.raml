@@ -1,0 +1,81 @@
+#%RAML 1.0
+title: Datos_Afiliado_API
+types:
+    request: !include /Request/Datos_Afiliado.raml  
+    requestUpdate: !include /Request/resquest_PUT_Client.raml
+    resquestDelete: !include /Request/request_DELETE_Client.raml
+    responseIDS: !include /responses/Response_GET_Client.raml
+    responseIDCreate: !include /responses/Response_POST_Client.raml
+    responseDelete: !include /responses/Response_DELETE_Client.raml
+    responseGetByID: !include /responses/Response_GETBYID_Client.raml
+  
+  
+/clients: 
+
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: responseIDS
+            example: !include /Examples/response/Response_Client_GET.json 
+            description: Esta operacion entrega todos los clientes con sus ID.
+            
+  post:
+    body:
+      application/json:
+        type: request
+        examples:
+          input: !include /Examples/request/request_POST_Client.json
+    responses:
+      201:
+        body:
+          application/json:
+            type: responseIDCreate
+            example: !include /Examples/response/Response_Client_POST.json 
+            description: Esta operacion entrega el mensaje con el cliente agregado exitosamente.
+      401:
+        body:
+          application/json:
+            type: responseIDCreate
+            example: !include /Examples/response/response_client_erorDB.json
+            description: cuando se emite este http code indica que tenemos problemas de conexion hacia la DB 
+
+  put:
+    body:
+      application/json:
+        type: requestUpdate
+        example: !include /Examples/request/request_PUT_Client.json
+    responses:
+      200:
+        body:
+          application/json:
+            type: responseIDCreate
+            example: !include  /Examples/response/Response_Client_PUT.json
+            description: Esta operacion actualiza datos del cliente 
+
+  delete:
+    body:
+      application/json:
+        type: resquestDelete
+        example: !include /Examples/request/request_DELETE_Client.json 
+    responses:
+      200:
+        body:
+          application/json:
+            type: responseDelete
+            example: !include  /Examples/response/Response_Client_DELETED.json
+            description: Esta operacion borra datos del cliente 
+  /{id}:
+    description: Esta operacion suministra los valores del cliente con el ID.
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: responseGetByID
+              example: !include /Examples/response/Response_Client_GetByID.json 
+              
+
+      
+          

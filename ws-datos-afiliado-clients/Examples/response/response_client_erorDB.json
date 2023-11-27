@@ -1,0 +1,5 @@
+{
+    "code": 401,
+    "message": "error de conectividad hacia la BD",
+    "clientId": 0
+}
